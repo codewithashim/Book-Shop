@@ -1,0 +1,62 @@
+.heroBanner {
+  position: relative;
+  overflow: hidden;
+  height: 80vh;
+  margin: 1rem;
+}
+
+.heroBannerBGImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.splide__pagination--bottom-left {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  display: flex;
+}
+
+.splide__pagination__page--black-square {
+  background-color: transparent;
+  border: 1px solid black;
+  margin: 0 5px;
+  width: 20px;
+  height: 20px;
+  border-radius: 0;
+}
+
+.splide__pagination__page--black-square.is-active {
+  background-color: black;
+}
+.splide__track,
+.splide {
+  height: 100%;
+}
+
+/* Custom arrow styles */
+.splide__arrow {
+  background-color: black;
+  width: 40px;
+  height: 40px;
+  border-radius: 0;
+  opacity: 1;
+}
+
+.splide__arrow svg {
+  fill: white;
+  width: 15px;
+  height: 15px;
+}
+
+.splide__arrows {
+  position: absolute;
+  right: 10px;
+  bottom: 25px;
+}
+
+.splide__arrow--prev {
+  right: 70px;
+  left: auto;
+}

@@ -1,0 +1,146 @@
+.loadMoreButton {
+  padding-bottom: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.loadMoreButton button {
+  margin-top: 1rem;
+  padding: 0.8rem 1rem;
+  border: 2px solid black;
+  outline: none;
+  background-color: transparent;
+  font-weight: 500;
+}
+
+.disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.allParent {
+  display: flex;
+  flex-direction: column;
+}
+
+@media (max-width: 767px) {
+  .sectionOne {
+    min-height: 80vh;
+    height: auto !important;
+    flex-wrap: wrap !important;
+  }
+  .sectionFour,
+  .blogs {
+    display: none !important;
+  }
+  .sectionOne > div {
+    flex: 1 1 20rem !important;
+  }
+  .allParent > div:nth-of-type(1) {
+    order: 1;
+  }
+  .allParent > div:nth-of-type(2) {
+    order: 3;
+  }
+  .allParent > div:nth-of-type(3) {
+    order: 2;
+  }
+  .allParent > div:nth-of-type(4) {
+    order: 4;
+  }
+  .allParent > div:nth-of-type(5) {
+    order: 5;
+  }
+  .allParent > div:nth-of-type(6) {
+    order: 6;
+  }
+  .allParent > div:nth-of-type(7) {
+    order: 7;
+  }
+  .allParent > div:nth-of-type(8) {
+    order: 8;
+  }
+}
+
+.floating-contact-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1000;
+  background-color: #333;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 70px;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  text-align: center;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s;
+}
+.floating-contact-button div {
+  width: 80%;
+}
+.floating-contact-button:hover {
+  background-color: #444;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+.ReactModal__Overlay {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.ReactModal__Content {
+  width: 500px;
+  height: 450px;
+  top: 50%;
+  left: 50%;
+}
+
+.ReactModal__Overlay {
+  background-color: rgb(0 0 0 / 92%) !important;
+  z-index: 1;
+}
+
+@keyframes bounce {
+  0% {
+    opacity: 0;
+    transform: scale(0.5) translate(-50%, -50%);
+  }
+  60% {
+    opacity: 1;
+    transform: scale(1.1) translate(-50%, -50%);
+  }
+  80% {
+    opacity: 1;
+    transform: scale(0.95) translate(-50%, -50%);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translate(-50%, -50%);
+  }
+}
+.modal-animation {
+  animation: bounce 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+@media (max-width: 769px) {
+  .floating-contact-buttond {
+    display: none;
+  }
+  .ReactModal__Content {
+    width: 350px !important;
+  }
+  .popupBgImage {
+    width: 300px !important;
+  }
+  .popupBgCross {
+    top: 86px !important;
+    right: 28px !important;
+  }
+}

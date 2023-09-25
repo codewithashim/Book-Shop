@@ -1,0 +1,44 @@
+.shopContent {
+  display: flex;
+  margin: 0 32px;
+}
+.shopContent > .homePageBookSectionLeft {
+  border-right: 1px solid #c4c4c4;
+}
+
+.price_range {
+  margin-top: 2rem;
+}
+
+input[type=range] {
+  -webkit-appearance: none;
+  width: 90%;
+  height: 4px;
+  background-color: #e0e0e0;
+  outline: none;
+  cursor: pointer;
+}
+
+input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 4px;
+  height: 16px;
+  background-color: black;
+  border: none;
+}
+
+input[type=range]::-moz-range-thumb {
+  width: 16px;
+  height: 16px;
+  background-color: #f26a7e;
+  border: none;
+  border-radius: 50%;
+}
+
+input[type=range]::-ms-thumb {
+  width: 16px;
+  height: 16px;
+  background-color: #f26a7e;
+  border: none;
+  border-radius: 50%;
+}/*# sourceMappingURL=shop.css.map */

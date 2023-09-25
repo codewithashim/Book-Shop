@@ -1,0 +1,59 @@
+.blog {
+  width: 300px;
+  height: 300px;
+  cursor: pointer;
+  background-color: white;
+}
+
+.blog > div {
+  padding: 1rem;
+}
+
+.blog .heading {
+  color: gray;
+  font-size: 15px;
+  font-weight: 500;
+}
+.blog .subHeading {
+  font-size: 18px;
+  padding: 0.5rem 1rem;
+  font-weight: 400;
+}
+
+.divider {
+  margin: 0 1rem;
+  border-bottom: 3.5px solid black;
+}
+.blogFooter {
+  color: gray;
+  font-size: 12px;
+}
+
+.clipped-heading {
+  padding-bottom: 0 !important;
+  display: -webkit-box;
+
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.clipped-subheading {
+  padding-bottom: 0 !important;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.clipped-text {
+  font-family: "Abel";
+  letter-spacing: 1%;
+  padding-bottom: 0 !important;
+  display: -webkit-box;
+  -webkit-line-clamp: 7;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

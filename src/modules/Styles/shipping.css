@@ -1,0 +1,151 @@
+.ShippingContainer {
+  width: 80%;
+  margin: auto;
+  min-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 4rem 0 2rem 0;
+}
+
+.ShippingContainerHeading {
+  font-size: 2rem;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.ShippingContentWrapper {
+  width: 100%;
+  display: flex;
+  margin-top: 24px;
+}
+
+.ShippingContentContainerHeading {
+  font-size: 22px;
+  font-weight: 500;
+  margin-top: 32px;
+}
+
+.ShippingActive {
+  background: #f0f2f2;
+  color: black !important;
+}
+
+.ShippingContent {
+  display: flex;
+  width: 70%;
+  flex-direction: column;
+  align-items: center;
+}
+
+.ShippingContentContainer {
+  padding: 56px;
+  width: 55%;
+}
+
+.ShippingContentContainer > div:nth-of-type(1) {
+  font-size: 22px;
+  font-weight: 500;
+}
+
+.ShippingContentInput > div {
+  display: flex;
+  justify-content: space-between;
+  margin: 2rem 0;
+}
+
+.ShippingContentInput > div > div {
+  width: 150px;
+}
+
+.ShippingContentInput > div input {
+  border-radius: 4px;
+  padding: 10px 4px;
+  border: 1px solid #c4c4c4;
+  flex: 1;
+}
+
+.ShippingCardContainer {
+  display: flex;
+}
+
+.ShippingCard > button {
+  background: #e6f1fa;
+  padding: 4px 8px;
+  border: none;
+  outline: none;
+}
+
+.ShippingButtons {
+  padding: 0 56px 20px 56px;
+  width: 50%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.ShippingButtons > button:nth-of-type(1) {
+  background: #000000;
+  color: white;
+  border: none;
+  outline: none;
+  padding: 12px;
+  width: 40%;
+}
+
+.ShippingButtons > button:nth-of-type(2) {
+  border: none;
+  outline: none;
+  background-color: transparent;
+}
+
+.Shippingsummary {
+  padding-top: 6rem;
+  width: 45%;
+}
+
+.shippingMethod {
+  padding: 2rem 0rem;
+}
+.shippingMethod > :nth-child(1) {
+  height: 1px;
+  width: 100%;
+  background-color: rgba(128, 128, 128, 0.422);
+}
+.shippingMethod > :nth-child(2),
+.shippingMethod :nth-child(4) {
+  height: 3rem;
+  width: 80%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.shippingMethod > :nth-child(2) > :nth-child(1),
+.shippingMethod > :nth-child(2) :nth-child(2),
+.shippingMethod > :nth-child(2) :nth-child(3),
+.shippingMethod :nth-child(4) > :nth-child(1),
+.shippingMethod :nth-child(4) :nth-child(2),
+.shippingMethod :nth-child(4) :nth-child(3) {
+  width: 20%;
+  text-align: left;
+}
+.shippingMethod > :nth-child(3) {
+  height: 0.5px;
+  width: 100%;
+  background-color: rgba(128, 128, 128, 0.392);
+}
+
+@media (max-width: 769px) {
+  .ShippingContentWrapper {
+    flex-wrap: wrap-reverse;
+  }
+  .ShippingContentWrapper > div {
+    flex: 1 1 20rem;
+    padding: 0;
+  }
+  .Shippingsummary {
+    padding: 0 !important;
+  }
+  .summaryBox_container_items > div > :nth-child(1) > :nth-child(2) {
+    width: 80%;
+  }
+}/*# sourceMappingURL=shipping.css.map */

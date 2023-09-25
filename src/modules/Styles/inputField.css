@@ -1,0 +1,14 @@
+.inputField > div {
+  display: flex;
+  justify-content: space-between;
+  margin: 2rem 0;
+}
+.inputField > div > div {
+  width: 150px;
+}
+.inputField > div input {
+  border-radius: 4px;
+  padding: 10px 4px;
+  border: 1px solid #c4c4c4;
+  flex: 1;
+}/*# sourceMappingURL=inputField.css.map */

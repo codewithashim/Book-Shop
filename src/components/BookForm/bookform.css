@@ -1,0 +1,86 @@
+.form-container {
+  max-width: 600px;
+  margin: 0 auto;
+}
+.form-container > div {
+  margin: 20px 80px;
+  text-align: center;
+  font-size: 24px;
+}
+
+.formlabel {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+}
+
+.forminput {
+  display: block;
+  width: 100%;
+  padding: 0.5rem;
+  margin-bottom: 1rem;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 0.25rem;
+}
+
+.forminput:focus {
+  outline: none;
+  border-color: #333;
+}
+
+.forminput[type="submit"] {
+  background-color: #0077ff;
+  color: #fff;
+  border: none;
+  border-radius: 0.25rem;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.forminput[type="submit"]:hover {
+  background-color: #0055cc;
+}
+
+.forminput[type="submit"]:active {
+  background-color: #0044aa;
+}
+
+/* Add these styles to the end of the file */
+.tabs {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+  margin-top: 10px;
+}
+
+.tab-button {
+  background-color: #f4f4f4;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  padding: 10px 20px;
+  margin: 0 10px;
+}
+
+.tab-button:hover {
+  background-color: #ddd;
+}
+
+.tab-button.active {
+  background-color: #ddd;
+}
+
+@media (max-width: 769px) {
+  .tabs {
+    flex-wrap: wrap;
+  }
+  .tab-button {
+    flex: 1 1 15rem;
+    margin-bottom: 5px;
+  }
+  .form-container {
+    padding: 1.5rem;
+  }
+}

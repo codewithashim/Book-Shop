@@ -1,0 +1,9 @@
+@media screen and (max-width: 768px) {
+  .individualblogContainer {
+    max-width: 100%;
+    flex-wrap: wrap;
+  }
+  .individualblogContainer > div {
+    flex: 1 1 25rem;
+  }
+}

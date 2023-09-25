@@ -1,0 +1,106 @@
+.homePageBookSection {
+  min-height: 50vh;
+  margin: 2rem 2rem;
+  display: flex;
+}
+/* Add this to your CSS file */
+.clear-filter-button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  color: #333;
+  text-decoration: none;
+  display: inline-block;
+  margin: 4px 2px;
+  transition: 0.3s;
+}
+
+.clear-filter-button:hover {
+  color: #555;
+}
+
+.checkbox-container {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+/* Hide the default checkbox */
+input[type="checkbox"] {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  position: relative;
+  outline: none;
+  width: 20px;
+  height: 20px;
+  background-color: white;
+  border: 1px solid black;
+}
+
+/* Change the background color to black when the checkbox is checked */
+input[type="checkbox"]:checked {
+  background-color: black;
+}
+
+/* Add a custom checkmark when the checkbox is checked */
+input[type="checkbox"]:checked:after {
+  content: "";
+  position: absolute;
+  top: calc(50% - 3px);
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(-45deg);
+  width: 10px;
+  height: 5px;
+  border: 2px solid white;
+  border-top: none;
+  border-right: none;
+}
+
+.homePageBookSectionLeft {
+  min-width: 200px;
+}
+
+.homePageBookSectionLeft > div:nth-of-type(1) {
+  font-weight: 700;
+  font-size: 18px;
+  margin: 1rem 0;
+}
+.homePageBookSectionLeft > div:nth-of-type(2) {
+  font-weight: 500;
+  font-size: 15px;
+  margin: 0 4px;
+  width: 100%;
+}
+.homePageBookSectionLeft > div:nth-of-type(2) input {
+  margin-right: 4px;
+}
+.homePageBookSectionLeft > div:nth-of-type(2) > div {
+  margin: 1rem 0;
+}
+
+.homePageBookSectionRight {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+.homePageBookSectionRight > div {
+  flex: 0 0 10rem;
+}
+
+@media (max-width: 767px) {
+  .book {
+    margin-left: 10px;
+    margin-right: 10px;
+    /* max-width: 150px; */
+    /* min-width: 150px; */
+  }
+  .homePageBookSection {
+    margin: 2rem 10px;
+  }
+  .homePageBookSectionLeft {
+    display: none;
+  }
+}

@@ -1,0 +1,163 @@
+.dashboardContainer {
+  width: 80%;
+  margin: auto;
+  min-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 4rem 0 2rem 0;
+}
+
+.dashboardContainerHeading {
+  font-size: 2rem;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+.dashboardContentWrapper {
+  border: 1px solid #c4c4c4;
+  width: 100%;
+  display: flex;
+  margin-top: 24px;
+}
+.dashboardNav {
+  width: 30%;
+  display: flex;
+  justify-content: center;
+  padding-top: 56px;
+  & > div > div {
+    padding: 10px 22px 10px 10px;
+    color: #828282;
+  }
+}
+.dashboardContentContainerHeading {
+  font-size: 22px;
+  font-weight: 500;
+  margin-top: 32px;
+}
+
+.dashboardActive {
+  background: #f0f2f2;
+  color: black !important;
+}
+.dashboardContent {
+  display: flex;
+  width: 70%;
+  flex-direction: column;
+  align-items: center;
+}
+
+.dashboardContentContainer {
+  padding: 56px;
+  width: 80%;
+  & > div:nth-of-type(1) {
+    font-size: 22px;
+    font-weight: 500;
+  }
+}
+.dashboardContentInput {
+  & > div {
+    display: flex;
+    justify-content: space-between;
+    margin: 2rem 0;
+    & > div {
+      width: 150px;
+    }
+    & input {
+      border-radius: 4px;
+      padding: 10px 4px;
+      border: 1px solid #c4c4c4;
+      flex: 1;
+    }
+  }
+}
+
+.dashboardCardContainer {
+  display: flex;
+}
+.dashboardCard {
+  margin-top: 10px;
+  & > div:nth-of-type(1) {
+    font-size: 18px;
+    font-weight: 500;
+  }
+  & > div:nth-of-type(2) {
+    font-size: 14px;
+    color: #828282;
+    margin: 10px 0;
+  }
+  & > button {
+    background: #e6f1fa;
+    padding: 4px 8px;
+    border: none;
+    outline: none;
+  }
+}
+
+.myWishListButtons {
+  padding: 10px 5px !important;
+}
+
+.dashboardButtons {
+  padding: 0 56px 20px 56px;
+  width: 50%;
+  display: flex;
+  justify-content: space-between;
+  & > button:nth-of-type(1) {
+    background: #000000;
+    color: white;
+    border: none;
+    outline: none;
+    padding: 12px;
+    width: 40%;
+  }
+  & > button:nth-of-type(2) {
+    border: none;
+    outline: none;
+    background-color: transparent;
+  }
+}
+
+.myWishList {
+  flex-wrap: wrap;
+  display: flex;
+  & > div {
+    max-width: 300px;
+  }
+}
+.burgerDashboardNav {
+  display: none;
+}
+
+@media (max-width: 769px) {
+  .burgerDashboardNav {
+    display: block;
+  }
+  .dashboardNav {
+    display: none;
+  }
+  .dashboardContentWrapper {
+    border: none;
+  }
+  .dashboardContent {
+    width: 100%;
+  }
+  .dashboardContentContainer {
+    width: 100%;
+    padding: 0;
+  }
+  .burgerDashboardNav select {
+    margin: 1rem 0;
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  }
+
+  .burgerDashboardNav select:focus {
+    outline: none;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  }
+}
