@@ -42,8 +42,8 @@ export default function Landing() {
           <Link to="/shop">Load More</Link>
         </button>
       </div>
-      <SectionTwo />
-      <SectionThree bookData={bookData} />
+      {/* <SectionTwo /> */}
+      {/* <SectionThree bookData={bookData} /> */}
       <SectionFour />
       {/* <Blogs /> */}
     </div>

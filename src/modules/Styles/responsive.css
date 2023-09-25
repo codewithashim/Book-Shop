@@ -1,0 +1,41 @@
+@media screen and (max-width: 768px) {
+  .container {
+    padding: 0 1rem;
+  }
+  /* .book {
+    height: 100%;
+    width: 100%;
+    margin: 1rem 0;
+  } */
+
+  .homePageBookSectionRight {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+  }
+
+
+
+  .descountSection {
+    margin-top: 5vw !important;
+
+  }
+
+  .cartProductSection2 {
+    margin-top: 30vw !important;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .cartProductSection4 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+}

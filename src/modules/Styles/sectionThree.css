@@ -1,6 +1,6 @@
 .sectionThree {
   min-height: 30vh;
-  margin: 2rem 0;
+  margin: 2rem ;
 }
 
 .sectionThree > div {
@@ -13,6 +13,7 @@
 }
 .sectionThree > div > div:nth-of-type(2) {
   display: flex;
+  gap: 1rem;
   overflow: scroll;
 }
 

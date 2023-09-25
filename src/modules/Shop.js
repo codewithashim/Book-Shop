@@ -131,47 +131,70 @@ export default function Shop() {
             />
           </div>
         </div>
-       
-
-
+      
         <div className="homePageBookSectionRight">
-          {bookData.length > 0 && handlecheckfilter === "All"
-            ? bookData.map((item, index) => {
-                if (
-                  parseInt(Object.values(item)[0].price) <=
-                  parseInt(sliderValue)
-                )
-                  return (
-                    <Book
-                      book={Object.values(item)[0]}
-                      index={index}
-                      keys={Object.keys(item)[0]}
-                    />
-                  );
-              })
-            : bookData.map((item, index) => {
-                if (Object.values(item)[0].category === handlecheckfilter)
-                  if (Object.values(item)[0].price <= sliderValue)
-                    return (
-                      <Book
-                        book={Object.values(item)[0]}
-                        index={index}
-                        keys={Object.keys(item)[0]}
-                      />
-                    );
-                  else {
-                  }
-              })}
-          <Card right={true} />
-          {bookData.length > 0 &&
-            bookData.map((item, index) => (
-              <Book
-                book={Object.values(item)[0]}
-                index={index}
-                keys={Object.keys(item)[0]}
-              />
-            ))}
+          {bookData.length > 0 && handlecheckfilter === "All" ? (
+            bookData.map((item, index) => {
+              if (
+                parseInt(Object.values(item)[0].price) <=
+                parseInt(sliderValue)
+              )
+                return (
+                  <Book
+                    book={Object.values(item)[0]}
+                    index={index}
+                    keys={Object.keys(item)[0]}
+                    key={index} // Add a unique key to each book
+                  />
+                );
+              return null; // Add this line to handle the else case
+            })
+          ) : (
+            bookData.map((item, index) => {
+              if (
+                Object.values(item)[0].category === handlecheckfilter &&
+                Object.values(item)[0].price <= sliderValue
+              )
+                return (
+                  <Book
+                    book={Object.values(item)[0]}
+                    index={index}
+                    keys={Object.keys(item)[0]}
+                    key={index} // Add a unique key to each book
+                  />
+                );
+              return null; // Add this line to handle the else case
+            })
+          )}
+
+  <Card right={true} />
+
+  {/* Calculate how many books are needed to fill the last row */}
+  {bookData.length > 0 && handlecheckfilter === "All" && (
+    <div style={{ display: "flex" }}>
+      {Array.from({ length: 4 - (bookData.length % 4) }).map((_, index) => (
+        <div key={index} style={{ flex: "0 0 10rem" }}>
+          {/* Repeat a book from the existing data */}
+          <Book
+            book={
+              Object.values(
+                bookData[index % bookData.length]
+              )[0]
+            }
+            index={index}
+            keys={
+              Object.keys(
+                bookData[index % bookData.length]
+              )[0]
+            }
+            key={`placeholder-${index}`} // Add a unique key to each placeholder
+          />
         </div>
+      ))}
+    </div>
+  )}
+</div>
+
       </div>
     </div>
   );

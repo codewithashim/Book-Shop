@@ -77,81 +77,54 @@ export default function HomePageBookSection({ bookData }) {
       )}
     </div>
 
-      {/* <div className="homePageBookSectionRight">
-        {bookData.length > 0 && selectedCheckbox === "All"
-          ? bookData.map((item, index) => {
-              console.log(Object.values(item)[0].category);
 
-              return (
-                <Book
-                  book={Object.values(item)[0]}
-                  index={index}
-                  keys={Object.keys(item)[0]}
-                />
-              );
-            })
-          : bookData.map((item, index) => {
-              if (Object.values(item)[0].category === selectedCheckbox)
-                //all in one
+      <div className="homePageBookSectionRight">
+        {bookData.length > 0 &&
+          (selectedCheckbox === "All"
+            ? bookData.map((item, index) => {
+                console.log(Object.values(item)[0].category);
+
                 return (
                   <Book
                     book={Object.values(item)[0]}
                     index={index}
                     keys={Object.keys(item)[0]}
+                    key={index} // Add a unique key to each book
                   />
                 );
-              else {
-              }
-            })}
-      </div> */}
+              })
+            : bookData.map((item, index) => {
+                if (Object.values(item)[0].category === selectedCheckbox)
+                  // All in one
+                  return (
+                    <Book
+                      book={Object.values(item)[0]}
+                      index={index}
+                      keys={Object.keys(item)[0]}
+                      key={index} // Add a unique key to each book
+                    />
+                  );
+                else {
+                }
+              }))}
 
-      <div className="homePageBookSectionRight">
-  {bookData.length > 0 &&
-    (selectedCheckbox === "All"
-      ? bookData.map((item, index) => {
-          console.log(Object.values(item)[0].category);
-
-          return (
-            <Book
-              book={Object.values(item)[0]}
-              index={index}
-              keys={Object.keys(item)[0]}
-              key={index} // Add a unique key to each book
-            />
-          );
-        })
-      : bookData.map((item, index) => {
-          if (Object.values(item)[0].category === selectedCheckbox)
-            // All in one
-            return (
-              <Book
-                book={Object.values(item)[0]}
-                index={index}
-                keys={Object.keys(item)[0]}
-                key={index} // Add a unique key to each book
-              />
-            );
-          else {
-          }
-        }))}
-
-  {/* Calculate how many books are needed to fill the last row */}
-  {bookData.length > 0 && selectedCheckbox === "All" && (
-    <div style={{ display: "flex" }}>
-      {Array.from({ length: 4 - (bookData.length % 4) }).map((_, index) => (
-        <div key={index} style={{ flex: " 0 0 10rem" }}>
-          {/* Render a placeholder element or repeat a book */}
-          <Book
-            book={bookData[index % bookData.length][Object.keys(bookData[index % bookData.length])[0]]}
-            index={index}
-            keys={Object.keys(bookData[index % bookData.length])[0]}
-            key={`placeholder-${index}`} // Add a unique key to each placeholder
-          />
-        </div>
-      ))}
-    </div>
-  )}
-</div>
+        {/* Calculate how many books are needed to fill the last row */}
+        {bookData.length > 0 && selectedCheckbox === "All" && (
+          <div style={{ display: "flex" }}>
+            {Array.from({ length: 4 - (bookData.length % 4) }).map((_, index) => (
+              <div key={index} style={{ flex: " 0 0 10rem" }}>
+                {/* Render a placeholder element or repeat a book */}
+                <Book
+                  book={bookData[index % bookData.length][Object.keys(bookData[index % bookData.length])[0]]}
+                  index={index}
+                  keys={Object.keys(bookData[index % bookData.length])[0]}
+                  key={`placeholder-${index}`} // Add a unique key to each placeholder
+                />
+              </div>
+            ))}
+          </div>
+        )}
+      </div>
 
     </div>
   );

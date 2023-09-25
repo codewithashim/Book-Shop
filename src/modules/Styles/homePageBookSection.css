@@ -16,12 +16,11 @@
   transition: 0.3s;
 }
 
-.filter-toggle-button{
+.filter-toggle-button {
   display: flex;
   align-items: center;
   gap: 1rem;
 }
-
 
 .clear-filter-button:hover {
   color: #555;
@@ -94,20 +93,17 @@ input[type="checkbox"]:checked:after {
 .homePageBookSectionRight {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-evenly;
-}
-
-.homePageBookSectionRight > div {
-  flex: 0 0 10rem;
+  justify-content: center;
 }
 
 @media (max-width: 767px) {
   .book {
-    margin-left: 10px;
-    margin-right: 10px;
+    /* margin-left: 10px;
+    margin-right: 10px; */
     /* max-width: 150px; */
     /* min-width: 150px; */
   }
+  
   .homePageBookSection {
     margin: 2rem 10px;
   }

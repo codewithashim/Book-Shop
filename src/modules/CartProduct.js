@@ -1,5 +1,6 @@
 import React, { useContext, useEffect, useRef, useState } from "react";
 import "./Styles/cartProduct.css";
+import "./Styles/responsive.css"
 import EnglishImage from "../Images/EnglishImage.png";
 import { collection, doc, getDoc, getDocs } from "firebase/firestore";
 import { db } from "../firebase";
@@ -186,7 +187,7 @@ export default function CartProduct() {
                     }
                     className="book-card"
                   >
-                    <img loading="lazy" src={Object.values(item)[0].url} />
+                    <img loading="lazy" src={Object.values(item)[0].url} alt=''/>
                     <div>{Object.values(item)[0].name}</div>
                     <div>{Object.values(item)[0].price} RS.</div>
                   </div>
@@ -196,7 +197,7 @@ export default function CartProduct() {
       <div className="cartProductSection1" ref={sectionRef}>
         <div>
           <div className="main-image-container">
-            <img loading="lazy" className="main-image" src={mainImage} />
+            <img loading="lazy" className="main-image" src={mainImage} alt=""/>
             <div className="small-image-container">
               <div>
                 <img
@@ -204,6 +205,7 @@ export default function CartProduct() {
                   className="small-image"
                   onClick={() => changeMainImage(bookData?.url)}
                   src={bookData?.url}
+                  alt=""
                 />
               </div>
               {bookData?.url1 && (
@@ -213,6 +215,7 @@ export default function CartProduct() {
                     className="small-image"
                     onClick={() => changeMainImage(bookData?.url1)}
                     src={bookData?.url1}
+                    alt=""
                   />
                 </div>
               )}
@@ -224,6 +227,7 @@ export default function CartProduct() {
                     className="small-image"
                     onClick={() => changeMainImage(bookData?.url2)}
                     src={bookData?.url2}
+                      alt=""
                   />
                 </div>
               )}
@@ -234,6 +238,7 @@ export default function CartProduct() {
                     className="small-image"
                     onClick={() => changeMainImage(bookData?.url3)}
                     src={bookData?.url3}
+                      alt=""
                   />
                 </div>
               )}
@@ -245,18 +250,22 @@ export default function CartProduct() {
             <img
               loading="lazy"
               src="https://cdn-icons-png.flaticon.com/128/3128/3128208.png"
+                alt=""
             />
             <img
               loading="lazy"
               src="https://cdn-icons-png.flaticon.com/128/3128/3128212.png"
+                alt=""
             />
             <img
               loading="lazy"
               src="https://cdn-icons-png.flaticon.com/128/733/733622.png"
+                alt=""
             />
             <img
               loading="lazy"
               src="https://cdn-icons-png.flaticon.com/128/2111/2111491.png"
+                alt=""
             />
           </div>
         </div>
@@ -382,8 +391,39 @@ export default function CartProduct() {
               </div>
             </div>
           </div>
+          <div className="buttonSection">
+            <button
+              className={bookData?.quantity === "0" ? "disabledCartButton" : ""}
+              disabled={bookData?.quantity === "0" ? true : false}
+              onClick={handleAddToCart}
+            >
+              Add To Bag
+            </button>
+            <button onClick={handleAddToWishList}>
+              <img
+                style={{
+                  width: "14px",
+                  height: "14px",
+                  objectFit: "contain",
+                  marginRight: "4px",
+                }}
+                src={"https://cdn-icons-png.flaticon.com/512/151/151910.png"}
+                alt=""
+              />{" "}
+              Save
+            </button>
+            <button
+              className={bookData?.quantity === "0" ? "disabledCartButton" : ""}
+              disabled={bookData?.quantity === "0" ? true : false}
+              onClick={handleBuyNow}
+            >
+              Buy Now
+            </button>
+          </div>
+        </div>
+      </div>
 
-          <div>
+      <div className="descountSection">
             {couponExist && (
               <div style={{ display: "flex", alignItems: "center" }}>
                 <img
@@ -489,39 +529,8 @@ export default function CartProduct() {
                 </button>
               </div>
             )}
-          </div>
-
-          <div>
-            <button
-              className={bookData?.quantity === "0" ? "disabledCartButton" : ""}
-              disabled={bookData?.quantity === "0" ? true : false}
-              onClick={handleAddToCart}
-            >
-              Add To Bag
-            </button>
-            <button onClick={handleAddToWishList}>
-              <img
-                style={{
-                  width: "14px",
-                  height: "14px",
-                  objectFit: "contain",
-                  marginRight: "4px",
-                }}
-                src={"https://cdn-icons-png.flaticon.com/512/151/151910.png"}
-                alt=""
-              />{" "}
-              Save
-            </button>
-            <button
-              className={bookData?.quantity === "0" ? "disabledCartButton" : ""}
-              disabled={bookData?.quantity === "0" ? true : false}
-              onClick={handleBuyNow}
-            >
-              Buy Now
-            </button>
-          </div>
-        </div>
       </div>
+     
       <div className="cartProductSection2" ref={sectionRef1}>
         <div>
           <div>
@@ -560,37 +569,21 @@ export default function CartProduct() {
           <img
             loading="lazy"
             src="https://img.icons8.com/ios/1x/plus-math.png"
+            alt=""
           />
         </div>
-        {/* <div>
-          <h1>Another tab</h1>
-          <img loading="lazy" src="https://img.icons8.com/ios/1x/plus-math.png" />
-        </div> */}
       </div>
-      <div className="cartProductSection3">
+    
+      <div className="mainCardSection">
         <div>
           <h3>You May Also Like</h3>
         </div>
-      </div>
-      <div className="cartProductSection4">
+        <div className="cartProductSection4">
         {" "}
         {allbookData.length &&
           allbookData.map((item, index) => {
             return (
               index < 5 && (
-                // <div
-                //   onClick={() =>
-                //     handleRedirect(`/book/${Object.keys(item)[0]}`)
-                //   }
-                //   className="cartProductSection4-image"
-                // >
-                //   <div>
-                //     <img loading="lazy" src={Object.values(item)[0].url} />
-                //   </div>
-                //   <div>{Object.values(item)[0].category}</div>
-                //   <div>{Object.values(item)[0].name}</div>
-                //   <div>{Object.values(item)[0].price} RS.</div>
-                // </div>
                 <Book
                   book={Object.values(item)[0]}
                   index={index}
@@ -600,6 +593,9 @@ export default function CartProduct() {
             );
           })}
       </div>
+      </div>
+
+     
     </div>
   );
 }
