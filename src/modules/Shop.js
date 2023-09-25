@@ -6,6 +6,7 @@ import SectionTwo from "./SectionTwo";
 import { db } from "../firebase";
 import { collection, doc, getDoc, getDocs } from "firebase/firestore";
 import Banner2 from "../Banners/2.png";
+import {FaAngleUp, FaAngleDown} from 'react-icons/fa'
 import { useLocation } from "react-router-dom";
 
 const Card = ({ right }) => {
@@ -30,6 +31,12 @@ export default function Shop() {
   const [sliderValue, setslidervalue] = useState(1000);
   const location = useLocation();
   const [categories, setCategories] = useState([]);
+  const [isFilterOpen, setIsFilterOpen] = useState(true);
+
+  const toggleFilter = () => {
+    setIsFilterOpen(!isFilterOpen);
+  };
+
 
   const handleBookFilter = (e) => {
     if (e.target.checked) {
@@ -76,8 +83,13 @@ export default function Shop() {
       <SectionTwo />
       <div className="shopContent">
         <div className="homePageBookSectionLeft">
-          <div>Sort Out:</div>
-          <div>
+        <div className="filter-toggle-button" onClick={toggleFilter}>
+         Sort Out:
+          {isFilterOpen ? <FaAngleDown/>: <FaAngleUp/>}
+        </div>
+        {
+          isFilterOpen && (
+            <div>
             {categories.length > 0 &&
               categories.map((c, i) => (
                 <div className="checkbox-container">
@@ -92,8 +104,8 @@ export default function Shop() {
                   <label htmlFor={`vehicle${i + 2}`}>
                     {c === "Popular" ? "All In One" : c}
                   </label>
-                </div>
-              ))}
+                </div>)
+              )}
             <div>
               <button
                 className="clear-filter-button"
@@ -103,6 +115,8 @@ export default function Shop() {
               </button>
             </div>
           </div>
+          )}
+          
           <div style={{ marginTop: "2rem" }}>
             Price Range: {sliderValue}Rs.
             <input
@@ -117,6 +131,9 @@ export default function Shop() {
             />
           </div>
         </div>
+       
+
+
         <div className="homePageBookSectionRight">
           {bookData.length > 0 && handlecheckfilter === "All"
             ? bookData.map((item, index) => {

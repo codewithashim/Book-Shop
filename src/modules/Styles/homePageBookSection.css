@@ -16,6 +16,13 @@
   transition: 0.3s;
 }
 
+.filter-toggle-button{
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+
 .clear-filter-button:hover {
   color: #555;
 }
@@ -37,6 +44,10 @@ input[type="checkbox"] {
   height: 20px;
   background-color: white;
   border: 1px solid black;
+  border-radius: 1.5rem !important;
+  cursor: pointer;
+  transition: 0.3s;
+  text-align: center;
 }
 
 /* Change the background color to black when the checkbox is checked */
