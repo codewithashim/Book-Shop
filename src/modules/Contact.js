@@ -33,9 +33,9 @@ export default function Contact() {
         </div>
         <div className="contactform-right">
           <div>
-            <img src={c} />
+            <img src={c} alt=""/>
           </div>
-          <div>
+          <div className="contactSetcionInfo">
             <div>
               <div>
                 <img
