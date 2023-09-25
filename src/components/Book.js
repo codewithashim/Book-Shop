@@ -21,7 +21,7 @@ export default function Book({ index, book, keys }) {
         className="book"
       >
         <div>
-          <img src={book?.url} loading="lazy" alt={book?.name} />
+          <img src={book?.url} loading="lazy" alt={book?.name} className="bookImg"/>
         </div>
         <div>{book?.name}</div>
         <div>{book?.price} Rs.</div>

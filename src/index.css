@@ -34,11 +34,21 @@ button {
   cursor: pointer;
 }
 
-
-.container{
+.container {
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 25rem;
+}
 
+img {
+  width: 100%;
+  height: 100%;
+}
+
+.bookImg {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover;
+  border-radius: 1.4rem !important;
 }
