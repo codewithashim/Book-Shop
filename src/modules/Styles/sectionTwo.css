@@ -1,8 +1,7 @@
 .sectionTwo {
-  min-height: 40vh;
+  min-height: 35vh;
   margin: 2rem;
   position: relative;
-
   display: flex;
 }
 .sectionTwo > div:nth-of-type(1) {

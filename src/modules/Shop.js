@@ -167,13 +167,13 @@ export default function Shop() {
             })
           )}
 
-  <Card right={true} />
+  {/* <Card right={true} /> */}
 
   {/* Calculate how many books are needed to fill the last row */}
   {bookData.length > 0 && handlecheckfilter === "All" && (
-    <div style={{ display: "flex" }}>
+    <div className="responsive-row" style={{ display: "flex" }}>
       {Array.from({ length: 4 - (bookData.length % 4) }).map((_, index) => (
-        <div key={index} style={{ flex: "0 0 10rem" }}>
+        <div key={index} className="responsive-book"  style={{ flex: " 0 0 10rem" }}>
           {/* Repeat a book from the existing data */}
           <Book
             book={

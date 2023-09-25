@@ -39,12 +39,13 @@ export default function SectionOne() {
         position: "absolute",
         bottom: "10%",
         width: "130px",
-        left: left ? "73%" : "5%",
+        left: left ? "60%" : "5%",
         background: "transparent",
         border: "2px solid #000000",
         color: "black",
         outline: "none",
         padding: "8px 24px",
+        display:"none"
       }}
     >
       Shop Now

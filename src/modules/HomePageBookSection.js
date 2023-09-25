@@ -107,24 +107,24 @@ export default function HomePageBookSection({ bookData }) {
                 else {
                 }
               }))}
-
-        {/* Calculate how many books are needed to fill the last row */}
-        {bookData.length > 0 && selectedCheckbox === "All" && (
-          <div style={{ display: "flex" }}>
-            {Array.from({ length: 4 - (bookData.length % 4) }).map((_, index) => (
-              <div key={index} style={{ flex: " 0 0 10rem" }}>
-                {/* Render a placeholder element or repeat a book */}
-                <Book
-                  book={bookData[index % bookData.length][Object.keys(bookData[index % bookData.length])[0]]}
-                  index={index}
-                  keys={Object.keys(bookData[index % bookData.length])[0]}
-                  key={`placeholder-${index}`} // Add a unique key to each placeholder
-                />
-              </div>
-            ))}
-          </div>
-        )}
+              {bookData.length > 0 && selectedCheckbox === "All" && (
+                <div   style={{ display: "flex" }} className="responsive-row">
+                  {Array.from({ length: 4 - (bookData.length % 4) }).map((_, index) => (
+                    <div key={index}  style={{ flex: " 0 0 10rem" }}  className="responsive-book">
+                      <Book
+                        book={bookData[index % bookData.length][Object.keys(bookData[index % bookData.length])[0]]}
+                        index={index}
+                        keys={Object.keys(bookData[index % bookData.length])[0]}
+                        key={`placeholder-${index}`} // Add a unique key to each placeholder
+                      />
+                    </div>
+                  
+                  ))}
+                </div>
+              )}
       </div>
+
+      
 
     </div>
   );

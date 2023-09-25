@@ -93,21 +93,48 @@ input[type="checkbox"]:checked:after {
 .homePageBookSectionRight {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+/* Define responsive styles for the responsive row */
+@media (max-width: 768px) {
+  .responsive-row {
+    flex-direction: column !important;
+    justify-content: space-evenly !important;
+    align-items: center !important;
+  }
+  .responsive-book {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+  }
+}
+
+@media (max-width: 576px) {
+  .responsive-book {
+    display: flex !important;
+    flex-direction: column !important;
+  }
 }
 
 @media (max-width: 767px) {
   .book {
-    /* margin-left: 10px;
-    margin-right: 10px; */
-    /* max-width: 150px; */
-    /* min-width: 150px; */
+    width: 100% !important;
   }
-  
+
+  .book img {
+    width: 100% !important;
+    
+  }
+
   .homePageBookSection {
     margin: 2rem 10px;
   }
   .homePageBookSectionLeft {
     display: none;
+  }
+  .homePageBookSectionRight {
+    width: 100% !important;
   }
 }
